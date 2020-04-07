@@ -166,6 +166,9 @@ func Int64ToDecimalScale(v int64, scale uint8) Decimal {
 		}
 		v = -v
 	}
+	if scale == 2 {
+		v = v * 100
+	}
 	return Decimal{
 		integer:  [4]uint32{uint32(v), uint32(v >> 32), 0, 0},
 		positive: positive,

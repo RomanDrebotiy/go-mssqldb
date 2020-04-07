@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/denisenkom/go-mssqldb/internal/decimal"
+	"github.com/RomanDrebotiy/go-mssqldb/internal/decimal"
 )
 
 type Bulk struct {
@@ -493,15 +493,15 @@ func (b *Bulk) makeParam(val DataValue, col columnStruct) (res param, err error)
 		var dec decimal.Decimal
 		switch v := val.(type) {
 		case int:
-			dec = decimal.Int64ToDecimalScale(int64(v), 0)
+			dec = decimal.Int64ToDecimalScale(int64(v), scale)
 		case int8:
-			dec = decimal.Int64ToDecimalScale(int64(v), 0)
+			dec = decimal.Int64ToDecimalScale(int64(v), scale)
 		case int16:
-			dec = decimal.Int64ToDecimalScale(int64(v), 0)
+			dec = decimal.Int64ToDecimalScale(int64(v), scale)
 		case int32:
-			dec = decimal.Int64ToDecimalScale(int64(v), 0)
+			dec = decimal.Int64ToDecimalScale(int64(v), scale)
 		case int64:
-			dec = decimal.Int64ToDecimalScale(int64(v), 0)
+			dec = decimal.Int64ToDecimalScale(int64(v), scale)
 		case float32:
 			dec, err = decimal.Float64ToDecimalScale(float64(v), scale)
 		case float64:

@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/denisenkom/go-mssqldb/internal/cp"
-	"github.com/denisenkom/go-mssqldb/internal/decimal"
+	"github.com/RomanDrebotiy/go-mssqldb/internal/cp"
+	"github.com/RomanDrebotiy/go-mssqldb/internal/decimal"
 )
 
 // fixed-length data types
